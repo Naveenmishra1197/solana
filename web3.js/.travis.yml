@@ -33,6 +33,9 @@ before_deploy:
 deploy:
   - provider: pages
     skip-cleanup: true
+    
+    
+    #testing PR by ritesh
     github-token: $GITHUB_TOKEN
     local-dir: doc
     on:
