@@ -1,8 +1,6 @@
 # |source| this file
-
 set -ex
 solana --version
-
 npm run clean
 npm run build
 ls -l lib
@@ -14,5 +12,3 @@ npm run lint
 npm run codecov
 npm run test:live-with-test-validator
 npm run test:browser-with-test-validator
-
-
