@@ -33,6 +33,8 @@ before_deploy:
 deploy:
   - provider: pages
     skip-cleanup: true
+    
+    #commenting
     github-token: $GITHUB_TOKEN
     local-dir: doc
     on:
