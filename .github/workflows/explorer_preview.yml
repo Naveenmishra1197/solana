@@ -56,3 +56,15 @@ jobs:
          SLACK_MESSAGE: ' Vercel Link: ${{ steps.test1.outputs.stdout }} PR Commit: ${{steps.test2.outputs.stdout}}'
          SLACK_TITLE: Vercel "Explorer" Preview Deployment Link , PR Commit
          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+         
+      - uses: actions/github-script@v5
+        with:
+          Vercel-link: ${{ steps.test1.outputs.stdout }}
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: ' $Vercel-link '
+            })
