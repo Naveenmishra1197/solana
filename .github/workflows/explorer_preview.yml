@@ -23,7 +23,7 @@ jobs:
       - name: vercel url
         run : |
               touch vercelfile.txt
-              vercel --token ${{secrets.VERCEL_TOKEN}}  ls explorer --scope team_8A2WD7p4uR7tmKX9M68loHXI > vercelfile.txt
+              vercel --token ${{secrets.VERCEL_TOKEN}}  ls explorer --scope team_aK8YBUvzcsrShzU9e6YchFsu > vercelfile.txt
               touch vercelfile1.txt
               head -n 2 vercelfile.txt > vercelfile1.txt
               touch vercelfile2.txt
