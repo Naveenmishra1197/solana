@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-
-
-
 set -ex
 cd "$(dirname "$0")"
 # shellcheck source=ci/env.sh
@@ -16,6 +13,8 @@ source ../ci/rust-version.sh
 
 # Get current channel
 eval "$(../ci/channel-info.sh)"
+
+
 
 # Synchronize translations with Crowdin only on stable channel
 if [ "$CHANNEL" = stable ]; then
